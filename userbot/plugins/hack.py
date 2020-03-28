@@ -10,7 +10,7 @@ from telethon import events
 import asyncio
 from uniborg.util import admin_cmd
 
-
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Set ALIVE_NAME in config vars in Heroku"
 
 
 @borg.on(admin_cmd(pattern=r"hack"))
@@ -43,7 +43,7 @@ async def _(event):
             "`Hacking... 52%\n█████████████▒▒▒▒▒▒▒▒▒▒▒▒ `",
             "`Hacking... 84%\n█████████████████████▒▒▒▒ `",
             "`Hacking... 100%\n█████████HACKED███████████ `",
-            "`Targeted Account Hacked...\n\nPay 101$ To Remove this hack..`"
+           f"`Targeted Account Hacked...\n\nPay 101$ To {DEFAULTUSER} to Remove this hack..`"
         ]
 
     for i in animation_ttl:
